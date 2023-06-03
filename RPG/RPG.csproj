@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Klasy\Player.cs" />
+    <Compile Include="Klasy\Przeciwnik.cs" />
+    <Compile Include="Lokacje\Bagna.cs" />
     <Compile Include="Lokacje\Lokacja.cs" />
     <Compile Include="Lokacje\Miasto.cs" />
     <Compile Include="Lokacje\Skrzyzowanie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Przedmioty\Przedmiot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
