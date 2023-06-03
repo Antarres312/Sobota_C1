@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.Przedmioty;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,40 @@ namespace RPG.Klasy
         public int lvl = 1;
         public int exp = 0;
         public int expToLvl = 15;
+
+        // Ekwipunek
+        private List<Przedmiot> ekwipunek = new List<Przedmiot>();
+
+        public bool AddItem(Przedmiot item)
+        {
+            foreach(Przedmiot przedmiot in ekwipunek)
+            {
+                if (przedmiot.name == item.name)
+                {
+                    przedmiot.quantity += item.quantity;
+                    return true;
+                }
+            }
+
+            ekwipunek.Add(item);
+            return true;
+        }
+
+        public bool RemoveItem(Przedmiot item) 
+        {
+
+            foreach (Przedmiot przedmiot in ekwipunek)
+            {
+                if(przedmiot.name == item.name && przedmiot.quantity >= item.quantity)
+                {
+                    przedmiot.quantity -= item.quantity;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 
         public string HUD()
         {
