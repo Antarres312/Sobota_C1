@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,7 +46,6 @@ namespace RPG.Klasy
             ekwipunek.Add(item);
             return true;
         }
-
         public bool RemoveItem(Przedmiot item) 
         {
 
@@ -59,6 +59,23 @@ namespace RPG.Klasy
             }
 
             return false;
+        }
+        public bool HaveItem(Przedmiot item)
+        {
+            foreach (Przedmiot przedmiot in ekwipunek)
+            {
+                if (przedmiot.name == item.name && przedmiot.quantity >= item.quantity)
+                    return true;
+            }
+            return false;
+        }
+        public List<Przedmiot> GetInventory()
+        {
+            return ekwipunek;
+        }
+        public void ClearInventory()
+        {
+            ekwipunek.Clear();
         }
 
 
